@@ -18,5 +18,5 @@ func main() {
 	r.PUT("/users/:id", controllers.UpdateUser)
 	r.DELETE("/users/:id", controllers.DeleteUser)
 
-	r.Run(":8081") // Defaults to :8080
+	r.Run(":8082") // Defaults to :8080
 }
