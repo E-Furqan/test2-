@@ -10,13 +10,13 @@ import (
 func main() {
 	config.ConnectDatabase()
 
-	r := gin.Default()
+	server := gin.Default()
 
-	r.GET("/users", controllers.GetUsers)
-	r.GET("/users/:id", controllers.GetUser)
-	r.POST("/users", controllers.CreateUser)
-	r.PUT("/users/:id", controllers.UpdateUser)
-	r.DELETE("/users/:id", controllers.DeleteUser)
+	server.GET("/users", controllers.GetUsers)
+	server.GET("/users/:id", controllers.GetUser)
+	server.POST("/users", controllers.CreateUser)
+	server.PUT("/users/:id", controllers.UpdateUser)
+	server.DELETE("/users/:id", controllers.DeleteUser)
 
-	r.Run(":8082") // Defaults to :8080
+	server.Run(":8082") // Defaults to :8080
 }

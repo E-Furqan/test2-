@@ -3,6 +3,8 @@ package config
 import (
 	"fmt"
 	"log"
+	"os"
+	"strconv"
 
 	"github.com/E-Furqan/test2-/models"
 	"github.com/joho/godotenv"
@@ -18,12 +20,13 @@ func ConnectDatabase() {
 		log.Fatalf("Error loading .env file: %v", err)
 	}
 
-	const (
-		host     = "localhost"
-		port     = 5432
-		user     = "furqan"
-		password = "furqan"
-		dbname   = "test1"
+	port, _ := strconv.Atoi(os.Getenv("DB_PORT"))
+
+	var (
+		host     = os.Getenv("DB_HOST")
+		user     = os.Getenv("DB_USER")
+		password = os.Getenv("DB_PASSWORD")
+		dbname   = os.Getenv("DB_NAME")
 	)
 
 	// Build connection string
