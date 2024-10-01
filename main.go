@@ -1,10 +1,10 @@
-package models
+// main.go
+package main
 
 import (
+	"github.com/E-Furqan/test2-/config"
+	"github.com/E-Furqan/test2-/controllers"
 	"github.com/gin-gonic/gin"
-
-	"github.com/E-Furqan/wy-web-app/config"
-	"github.com/E-Furqan/wy-web-app/controllers"
 )
 
 func main() {
@@ -18,5 +18,5 @@ func main() {
 	r.PUT("/users/:id", controllers.UpdateUser)
 	r.DELETE("/users/:id", controllers.DeleteUser)
 
-	r.Run() // Defaults to :8080
+	r.Run(":8081") // Defaults to :8080
 }
